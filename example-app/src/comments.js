@@ -8,7 +8,7 @@ function comments(state = [], action) {
                 text: action.text,
                 votes: 0
             },
-            ...state.comments];
+            ...state];
 
         case REMOVE_COMMENT:
             return state.comments.filter(comment => comment.id !== action.id);
@@ -18,24 +18,24 @@ function comments(state = [], action) {
                 id: action.id,
                 text: action.text
             },
-            ...state.comments];
+            ...state];
         
         case THUMB_UP_COMMENT:
             return [{
                 id: action.id,
                 votes: action.votes
             },
-            ...state.comments];
+            ...state];
 
         case THUMB_DOWN_COMMENT:
             return [{
                 id: action.id,
                 votes: action.votes
             },
-            ...state.comments];
+            ...state];
 
         default:
-            return state.comments;
+            return state;
     }
 }
 
